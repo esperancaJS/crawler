@@ -1,8 +1,9 @@
 const puppeteer = require('puppeteer');
 var fs = require('fs');
+const browserConfig = require('./shared/browser-config.json')
 
 module.exports = (async () => {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch(browserConfig);
     const page = await browser.newPage();
 
     await page.goto('https://www.hostelworld.com/hostels');
@@ -29,11 +30,7 @@ module.exports = (async () => {
             )
     );
 
-    // await page.screenshot({path: 'data-dump/get-countries.png', fullPage: true});
-
-    // fs.writeFile('data-dump/countries.json', JSON.stringify(countries, null, 4), 'utf8', () => {});
-
-    await browser.close();
+    // await browser.close();
 
     return countries;
 });

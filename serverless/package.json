@@ -1,0 +1,14 @@
+{
+  "name": "serverless-puppeteer-layers",
+  "version": "1.0.0",
+  "main": "handler.js",
+  "dependencies": {
+    "puppeteer": "^1.11.0",
+    "serverless-apigw-binary": "^0.4.4",
+    "serverless-apigwy-binary": "^0.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "deploy": "rm -rf node_modules && PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=1 npm install && SLS_DEBUG=* serverless deploy"
+  }
+}

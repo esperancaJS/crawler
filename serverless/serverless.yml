@@ -1,0 +1,30 @@
+service: hostelworld-spiders
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  timeout: 15
+  memorySize: 2048
+
+layers:
+  chrome:
+    path: layer
+
+functions:
+  hello:
+    handler: handler.hello
+  countries:
+    handler: handler.countries
+    layers:
+      - {Ref: ChromeLambdaLayer}
+
+# consider removing bellow
+
+# plugins:
+#   - serverless-apigw-binary
+#   - serverless-apigwy-binary
+
+# custom:
+#   apigwBinary:
+#     types:
+#       - '*/*'

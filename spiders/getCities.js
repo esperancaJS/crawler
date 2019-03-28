@@ -37,10 +37,6 @@ module.exports = (async (country) => {
         country
     }))
 
-    // await page.screenshot({path: 'data-dump/get-countries.png', fullPage: true});
-
-    // fs.writeFile('data-dump/cities.json', JSON.stringify(locations, null, 4), 'utf8', () => {});
-
     await browser.close();
 
     return locations;
