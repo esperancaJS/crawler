@@ -2,4 +2,5 @@ node_modules
 data-dump
 serverless/node_modules
 serverless/.serverless
+serverless/layer
 serverless/keys.MD
